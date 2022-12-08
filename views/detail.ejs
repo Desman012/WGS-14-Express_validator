@@ -1,0 +1,27 @@
+<!-- membuat logika apabila data ada atau tidak -->
+<% if (!getDetail) { %>
+  <!-- Jika tidak ada akan menampilkan pesan error -->
+  <div class="py-5">
+    <div class="card container w-25">
+      <h3 class="card-header">ERROR!!</h3>
+      <div class="card-body fw-bold">
+            <p class="card-text"><%= params %> Data Not found</p>
+        <a href="/contact" class="btn btn-primary">Back</a>
+      </div>
+    </div>
+  </div>
+
+<% } else {%>
+  <!-- jika ada akan menampilkan datanya -->
+<div class="py-5">
+  <div class="card container w-25">
+    <h3 class="card-header">Detail Contact</h3>
+    <div class="card-body fw-bold">
+          <p class="card-text">Nama : <%= getDetail.name %></p>
+          <p class="card-text">Email : <%= getDetail.email %></p>
+          <p class="card-text">Telepon : <%= getDetail.tlp %></p>
+      <a href="/contact" class="btn btn-primary">Back</a>
+    </div>
+  </div>
+</div>
+<% } %>

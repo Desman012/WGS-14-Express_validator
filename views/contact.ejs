@@ -1,0 +1,39 @@
+<div class="container">
+    <!-- untuk heading content -->
+    <div style="padding-top: 5%;"class="text-center">
+        <h2>Contact</h2>
+        <br>
+    </div>
+
+    <!-- button add new contact -->
+    <div style="padding-left: 25%;" class="py-3">
+        <a href="/add" class="text-decoration-none btn btn-success m-auto">Add new contact</a>
+    </div>
+
+    <div>
+        <!-- membuat tabel -->
+        <table class="table table-striped w-50 text-center m-auto">
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Mobile</th>
+                <th>Action</th>
+            </tr>
+            <% x = 1 %>
+
+            <!-- memanampilkan isi dari data.json -->
+            <% contacts.forEach(elm => { %>
+            <tr>
+                <td><%= x %> </td>
+                <td><%= elm.name %></td>
+                <td><%= elm.tlp %></td>
+                <td>
+                    <a class="badge rounded-pill text-bg-success text-decoration-none py-2 px-3"
+                        href="/contact/<%= elm.name %> ">Detail</a>
+                </td>
+            </tr>
+            <% x+=1 %>
+            <% }) %>
+        </table>
+    </div>
+</div>
